@@ -1,6 +1,7 @@
 package org.json.junit.example2
 
 import org.json.junit.example2.assertions.SUT
+import org.junit.jupiter.api.Assertions.assertNull
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.assertAll
 import kotlin.test.Test
@@ -37,5 +38,38 @@ class AsertAllTest {
         }, {
             assertTrue { syustemUnderTest.isVerified!! }
         })
+    }
+
+    @Test
+    @DisplayName("테스트 대상 시스템을 검증한다")
+    fun testSystemUnderVerification2() {
+        val syustemUnderTest = SUT(
+            systemName = "테스트 대상 시스템"
+        )
+
+
+        syustemUnderTest.isVerified = true
+
+        assertTrue(syustemUnderTest.isVerified!!, "테스트 대상 시스템을 검증했는지 확인")
+    }
+
+    @Test
+    @DisplayName("테스트 대상 시스템을 검증하지 않았다")
+    fun testSystemUnderVerification3() {
+        val syustemUnderTest = SUT(
+            systemName = "테스트 대상 시스템"
+        )
+
+        assertFalse(syustemUnderTest.isVerified!!, "테스트 대상 시스템을 검증했는지 확인")
+    }
+
+    @Test
+    @DisplayName("테스트 대상 시스템은 현재 작업이 없다")
+    fun testNoJob() {
+        val syustemUnderTest = SUT(
+            systemName = "테스트 대상 시스템"
+        )
+
+        assertNull(syustemUnderTest.currentJob, "테스트 대상 시스템은 현재 작업이 없는지 확인")
     }
 }
