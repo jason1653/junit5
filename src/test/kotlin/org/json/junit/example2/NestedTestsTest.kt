@@ -1,6 +1,6 @@
-package org.json.junit
+package org.json.junit.example2
 
-import org.json.junit.example2.Customer
+import org.json.junit.example2.assertions.Customer
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.assertAll
