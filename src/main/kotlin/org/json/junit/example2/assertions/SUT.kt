@@ -10,4 +10,9 @@ data class SUT(
         isVerified = false;
     }
 
+    fun addJob(job: Job) {
+        jobs?.toMutableList()?.add(job)
+
+    }
+
 }

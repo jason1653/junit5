@@ -5,4 +5,6 @@ data class Customer(
     val middleName: String,
     val lastName: String,
     val dateOfBirth: String
-)
+) {
+
+}
